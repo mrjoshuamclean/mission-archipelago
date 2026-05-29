@@ -7,10 +7,20 @@ point.
 ## Usage
 1. Change paths in `ap-async.bat` to match your AP install (PLAYERS and WORLDS)
 1. Create a configuration YAML with your desired settings and number of games
-(see `async.yaml` and `checked.yaml` for examples)
+(see `games/async.yaml` for example)
 1. Run `gen-async.bat` to generate the AP yaml files for the async, then
 `ap-async.bat` to generate the worlds in your AP "output" directory
 (Alternatively, run `gen-async.bat; ap-async.bat` to do both at once)
+
+### Final Fantasy
+1. Generate an equal number of seeds on ffrandomizer.com matching the requested
+number set in yaml
+1. Put files from ffrandomizer.com (.nes and .yaml) in 
+`C:\Games\Randomizers\Final Fantasy Randomizer\Mission Archipelago` (this is
+currently hardcoded)
+1. Replace `FFR` in .nes filename with username from `.yaml` (so they match exactly)
+1. Generate as normal (see Usage above)
+1. Copy FFR .nes file to output directory and play this with NES connector (no AP file)
 
 ## Notes
 - USING WEIGHTS IS CURRENTLY BROKEN - ONLY USE OPTION 1 (COUNTS)

@@ -8,7 +8,7 @@ class ConfigError(Exception):
     pass
 
 
-def load_config(path: str = "async.yaml") -> Tuple[
+def load_config(path: str = "games/async.yaml") -> Tuple[
     Dict[str, Any], int, int, int, int, str | None
 ]:
     """

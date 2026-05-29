@@ -9,7 +9,7 @@ from mystery_settings import MysterySettings
 from file_utils import collect_game_files, write_outputs
 
 
-def _parse_args(default_config: str = "async.yaml"):
+def _parse_args(default_config: str = "games/async.yaml"):
     config_path = default_config
     total_games_override = None
     dry_run = False
