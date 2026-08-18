@@ -56,6 +56,8 @@ of the underworld) as soon as you find the local seaglide pieces
 - fails in weights mode because weights.yaml isn't set up correctly
 
 ## TODO - FEATURES
+- add weighted chance option to select random games similar to weighted options
+  (instead of count)
 - update every YAML to include target AP World version
 - set progression_balancing in configuration YAML for easier switching (this can
 be in meta.yaml for weights, but must be done manually for counts)
@@ -75,3 +77,9 @@ print a summary at the end
 - setup script or on a first run of gen-async.bat asking for path to AP install
 so gen-async.bat doesn't require manual modification (and some mechanics to
 reset to change)
+
+## Check Counts
+- Symphony of the Night:
+  - base: guarded	37 / eq 102 / full 386
+  - bosses	+13
+  - enemies	+141

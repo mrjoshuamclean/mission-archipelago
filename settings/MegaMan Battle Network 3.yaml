@@ -1,5 +1,5 @@
 ﻿name: MMBN3-{player}
-description: MegaMan Battle Network 3 - Mission Archipelago
+description: Mission Archipelago - MegaMan Battle Network 3 
 requires:
   version: 0.6.4
 
