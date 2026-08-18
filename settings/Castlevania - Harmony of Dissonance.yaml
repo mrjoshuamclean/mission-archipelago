@@ -1,0 +1,198 @@
+﻿name: HoD-{player}
+description: Mission Archipelago - Castlevania - Harmony of Dissonance
+#game: Castlevania - Harmony of Dissonance
+requires:
+  version: 0.6.7 # Version of Archipelago required for this yaml to work as expected.
+
+Castlevania - Harmony of Dissonance:
+  ################
+  # Game Options #
+  ################
+  progression_balancing: normal
+
+  accessibility:
+    # Set rules for reachability of your items/locations.
+    # 
+    # **Full:** ensure everything can be reached and acquired.
+    # 
+    # **Minimal:** ensure what is needed to reach your goal can be acquired.
+    full: 50
+    minimal: 0
+
+  #####################
+  # goal requirements #
+  #####################
+  medium_ending_required:
+    # Whether watching the medium ending (defeat Maxim in Castle A) is required
+    # for goal completion.
+    # OVERRIDDEN BY ending VALUE
+    'false': 50
+    'true': 0
+
+  worst_ending_required:
+    # Whether watching the worst ending (defeat Maxim in Castle B with JB's and
+    # MK's Bracelets unequipped) is required for goal completion.
+    # OVERRIDDEN BY ending VALUE
+    'false': 50
+    'true': 0
+
+  best_ending_required:
+    # Whether watching the best ending (defeat Maxim in Castle B with JB's and
+    # MK's Bracelets equipped) is required for goal completion.
+    # Will be forced on if no other goal requirement is enabled.
+    # OVERRIDDEN BY ending VALUE
+    'false': 1
+    'true': 0
+
+  ending:
+    'worst': 4
+    'medium': 2
+    'best': 1
+
+  furniture_amount_required:
+    # How many pieces of furniture are required to be found and set for goal completion. Furniture will be irrelevant if set to 0.
+    #
+    # You can define additional values between the minimum and maximum values.
+    # Minimum value is 0
+    # Maximum value is 31
+    0: 8
+    random-range-low-1-10: 4
+    random-range-low-11-20: 2
+    random-range-low-21-31: 1
+
+  #######################
+  # entrance randomizer #
+  #######################
+  area_shuffle:
+    # Randomizes where every transition to a different named area leads.
+    # Separate: Both castles will have their areas kept separate from each other.
+    # Combined: Both castles will have their areas mixed into one.
+    none: 16
+    separate: 4
+    combined: 1
+
+  decouple_transitions:
+    # Whether transition entrances should be decoupled from exits if Area
+    # Shuffle is enabled. Going back through an area transition will send you
+    # somewhere completely different from whence you came.
+    'false': 16
+    'true': 1
+
+  link_door_types:
+    # Whether special door types should only be linked with each other (all
+    # skull doors link to other skull doors and all MK's Bracelet doors link to
+    # other MK's Bracelet doors).
+    'false': 1
+    'true': 2
+
+  ##############
+  # difficulty #
+  ##############
+  early_lizard:
+    # Ensures you will find Lizard Tail in the multiworld's Sphere 1 somewhere, making the harder paths out less likely.
+    'false': 1
+    'true': 4
+
+  spellbound_boss_logic:
+    # Makes certain bosses that are considered "medium" or "hard" in difficulty
+    # logically expect spell books to get past. See the Game Page for
+    # information on which bosses are considered what difficulty.
+    # None: No boss expects any number of spell books.
+    # Easy: Medium bosses expect 2 spell books and hard bosses expect 3 spell books.
+    # Normal: Medium bosses expect 1 spell book and hard bosses expect 2 spell books.
+    none: 1
+    easy: 4
+    normal: 8
+
+  castle_warp_condition:
+    # The condition for allowing usage of all the warp room round gates to travel between castles.
+    # None: No condition; the gates are all usable from the beginning.
+    # Bracelet: The gates will unlock upon finding JB's Bracelet. There's no need to equip it.
+    # Death: The gates will unlock after talking to Death at Clock Tower A like in the vanilla game.
+    none: 1
+    bracelet: 16
+    death: 4
+
+  death_link:
+    # When you die, everyone who enabled death link dies. Of course, the reverse is true too.
+    'false': 50
+    'true': 0
+
+  ###################
+  # quality of life #
+  ###################
+  double_sided_warps:
+    # Allows changing castles at a round warp gate without needing to fulfill
+    # the cross-castle warp condition if the warp rooms on both sides of it have
+    # been reached independently of each other.
+    'false': 0
+    'true': 50
+
+  ###########################
+  # Item & Location Options #
+  ###########################
+  local_items:
+    # Forces these items to be in their native world.
+    []
+
+  non_local_items:
+    # Forces these items to be outside their native world.
+    []
+
+  start_inventory:
+    # Start with the specified amount of these items. Example: "Bomb: 1"
+    {}
+
+  start_inventory_from_pool:
+    # Start with the specified amount of these items and don't place them in the world. Example: "Bomb: 1"
+    # 
+    # The game decides what the replacement items will be.
+    {}
+
+  start_hints:
+    # Start with these item's locations prefilled into the ``!hint`` command.
+    []
+
+  start_location_hints:
+    # Start with these locations and their item prefilled into the ``!hint`` command.
+    []
+
+  exclude_locations:
+    # Prevent these locations from having an important item.
+    []
+
+  priority_locations:
+    # Prevent these locations from having an unimportant item.
+    []
+
+  item_links:
+    # Share part of your item pool with other players.
+    []
+
+  plando_items:
+    # Generic items plando.
+    []
+
+  ############
+  # Triggers #
+  ############
+  triggers:
+  # set ending based on chosen value
+  - option_category: Castlevania - Harmony of Dissonance
+    option_name: ending
+    option_result: 'worst'
+    options:
+      Castlevania - Harmony of Dissonance:
+        worst_ending_required: 'true'
+  - option_category: Castlevania - Harmony of Dissonance
+    option_name: ending
+    option_result: 'medium'
+    options:
+      Castlevania - Harmony of Dissonance:
+        medium_ending_required: 'true'
+  - option_category: Castlevania - Harmony of Dissonance
+    option_name: ending
+    option_result: 'best'
+    options:
+      Castlevania - Harmony of Dissonance:
+        best_ending_required: 'true'
