@@ -94,8 +94,8 @@ Metroid Fusion:
     # Minimum value is 1
     # Maximum value is 20
     # Default is 5
-    random-range-middle-1-9: 18
-    random-range-low-10-20: 11
+    random-range-middle-1-9: 2
+    random-range-low-10-20: 1
 
   InfantMetroidsRequired:
     # How many Infant Metroids will be required to beat the game.
@@ -105,8 +105,8 @@ Metroid Fusion:
     # Minimum value is 1
     # Maximum value is 20
     # Default is 5
-    random-range-middle-1-9: 18
-    random-range-low-10-20: 11
+    random-range-middle-1-9: 2
+    random-range-low-10-20: 1
 
   InfantMetroidLocations:
     # Where Infant Metroids can be located.
@@ -279,3 +279,40 @@ Metroid Fusion:
   plando_items:
     # Generic items plando.
     []
+
+
+  InfantMetroidsInPool:
+    # How many Infant Metroids will be in the item pool.
+    #
+    # You can define additional values between the minimum and maximum values.
+    # Minimum value is 1
+    # Maximum value is 20
+    # Default is 5
+    random-range-middle-1-9: 2
+    random-range-middle-10-20: 1
+
+  InfantMetroidsRequired:
+    # How many Infant Metroids will be required to beat the game.
+    # If set to more than the number in the pool, will instead become however many are present.
+    #
+    # You can define additional values between the minimum and maximum values.
+    # Minimum value is 1
+    # Maximum value is 20
+    # Default is 5
+    1
+    #random-range-middle-1-9: 2
+    #random-range-low-10-20: 1
+
+  triggers:
+  - option_category: Metroid Fusion
+    option_name: InfantMetroidsInPool
+    option_result: random-range-middle-1-9
+    options:
+      Metroid Fusion:
+        InfantMetroidsRequired: random-range-low-1-9
+  - option_category: Metroid Fusion
+    option_name: InfantMetroidsInPool
+    option_result: random-range-middle-10-20
+    options:
+      Metroid Fusion:
+        InfantMetroidsRequired: random-range-low-10-20

@@ -39,7 +39,7 @@ Castlevania - Circle of the Moon:
     # Minimum value is 0
     # Maximum value is 9
     # NOTE: We require at least 1 unless the goal is Battle Arena, in which case it's forced to 0
-    random-range-middle-1-9: 1
+    random-range-high-1-9: 1
 
   available_last_keys:
     # How many Last Keys are in the pool in total.
