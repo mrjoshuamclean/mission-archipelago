@@ -33,10 +33,10 @@ Super Mario 64:
   # Logic Options
   area_rando:
     # Randomize Entrances
-    'off': 16
-    courses_only: 8
-    courses_and_secrets_separate: 2
-    courses_and_secrets: 1
+    'off': 1
+    courses_only: 16
+    courses_and_secrets_separate: 8
+    courses_and_secrets: 2
 
   buddy_checks:
     # Bob-omb Buddies are checks, Cannon Unlocks are items
