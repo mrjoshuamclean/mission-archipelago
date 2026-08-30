@@ -1,0 +1,234 @@
+﻿name: SuperMeatBoy-{player}
+description: Mission Archipelago - Super Meat Boy
+
+requires:
+  version: 0.6.7 # Version of Archipelago required for this yaml to work as expected.
+
+Super Meat Boy:
+  progression_balancing: normal
+  accessibility: full
+
+  goal:
+    # Larries: Beat the Larries in Chapter 5
+    # Light World: Beat LW Dr. Fetus after collecting the 6 chapter keys
+    # Dark World: Beat DW Dr. Fetus after completing 85 DW levels
+    # Light World Chapter 7: Beat all of Light World Chapter 7
+    # Dark World Chapter 7: Beat all of Dark World Chapter 7
+    # Boss Tokens: Collect all the boss tokens
+    # Bandage: McGuffin hunt to collect all the bandages
+    # Achievements: Obtain X amount of Achievement Tokens
+    larries: 128
+    light_world: 64
+    dark_world: 16
+    light_world_chapter7: 8
+    dark_world_chapter7: 8
+    boss_tokens: 4
+    bandages: 1
+    achievements: 1
+
+  boss_req:
+    # How many boss keys are required to fight the boss (only affects Chapters 1-5)
+    #
+    # You can define additional values between the minimum and maximum values.
+    # Minimum value is 0
+    # Maximum value is 20
+    # Default 17
+    random-range-high-0-16: 1
+    17: 3
+    random-range-low-18-20: 1
+
+  lw_dr_fetus_req:
+    # How many boss keys are required to fight LW Dr. Fetus
+    #
+    # You can define additional values between the minimum and maximum values.
+    # Minimum value is 0
+    # Maximum value is 5
+    # Default 5
+    random-range-high-0-5: 1
+
+  bandages_amount:
+    # If your goal is bandages, how many are required to goal
+    # For each chapter enabled there are 11 bandages in LW (8 if its chapter 3) and 9 bandages in DW (12 if its chapter 3)
+    #
+    # You can define additional values between the minimum and maximum values.
+    # Minimum value is 1
+    # Maximum value is 100
+    # Default 100
+    random-range-high-1-100: 1
+
+  boss_tokens:
+    # Enable this setting if you want to put boss tokens on all the bosses to require to goal
+    # Disable this setting if you need to collect all the chapter keys to reach your goal (this only applies if your goal is to beat lw/dw chapter 7).
+    # This setting will always be on if goal is boss tokens
+    # Another random chapter with a boss will be added if boss tokens is required but your only chapter is 5
+    'false': 2
+    'true': 1
+
+  boss_token_req:
+    # How many boss tokens require to goal
+    #
+    # You can define additional values between the minimum and maximum values.
+    # Minimum value is 1
+    # Maximum value is 6
+    # Default 5
+    random-range-high-1-4: 1
+    5: 3
+    6: 1
+
+  bandages:
+    # Enables the bandage collectibles as locations.
+    'false': 4
+    'true': 1
+
+  dark_world:
+    # If the goal is LW Dr. Fetus or LW Chapter 7, enable dark world levels
+    # This setting will always be on if your setting is DW Dr. Fetus or DW Chapter 7
+    'false': 1
+    'true': 4
+
+  chapters:
+    # Which chapters should be in the pool
+    # Enter any number between 1-7 for the respective chapter to be in the pool
+    # Enter "Random-X" with X being a number between 1-4 random chapter(s)
+    # Enter "Random-X+" with X being a number between 1-6 random chapter(s) with the inclusion of the last 2 chapters
+    # If you enter ["5", "Random-4+"] then chapter 5 and 4 other random chapters will be selected.
+    # If any of the last 3 chapters aren't in the pool, your goal will be boss tokens.
+    # If DW Dr. Fetus is a location, a random number of chapters between 1-5 will be added to assure you can beat at least 85 DW levels.
+    ['1', '2', '3', '4', '5', '6']
+
+  starting_chpt:
+    # Choose Starting Chapter
+    # If your starting chapter isn't in the list of chapters, a random one from that list will be picked.
+    #
+    # You can define additional values between the minimum and maximum values.
+    # Minimum value is 1
+    # Maximum value is 7
+    # Default 1
+    1: 2
+    random-range-low-2-7: 1
+
+  starting_char:
+    # Choose Starting Character
+    # If you start in Chapter 6, your character will be Meat Boy
+    # If you start in Chapter 7, your character will be Bandage Girl
+    meat_boy: 4
+    8bit_meat_boy: 2
+    4bit_meat_boy: 2
+    4color_meat_boy: 2
+    commander_video: 1
+    jill: 1
+    ogmo: 1
+    flywrench: 1
+    the_kid: 1
+    josef: 1
+    naija: 1
+    runman: 1
+    steve: 1
+    meat_ninja: 1
+    brownie: 1
+
+  achievements:
+    # Puts most steam achievements in the pool
+    'false': 8
+    'true': 1
+
+  deathless_achievements:
+    # Puts all deathless achievements in the pool
+    'false': 50
+    'true': 0
+
+  speedrun_achievements:
+    # Puts all speedrun achievements in the pool
+    # Dark world levels will automatically be enabled if this is turned on.
+    'false': 50
+    'true': 0
+
+  achievement_goals:
+    # Which achievements should count towards the goal.
+    # If none are present, the normal achievements will be on.
+    # Valid options are "normal", "deathless", "speedrun"
+    # Achievements will be automatically turned on if they are present in this option
+    # This setting does nothing if your goal is NOT achievements.
+    ['normal']
+
+  achievement_tokens:
+    # Tokens needed to reach goal. Max varies by settings:
+    # Normal: 2 base, 2 per chpt 1-6 (12 total), +1 with any chpt 1-5, +1 chpt 7, +2 DW, +1 DW + chpt 6, +1 DW + chpt 7, +3 bandages, +3 bandages + DW
+    # Speedrun: 1 per chpt 1-5 (5 total)
+    # Deathless: 1 per chpt 1-7 (7 total, 14 total with DW)
+    #
+    # You can define additional values between the minimum and maximum values.
+    # Minimum value is 1
+    # Maximum value is 45
+    18: 50
+    random: 0
+    random-low: 0 # random value weighted towards lower values
+    random-high: 0 # random value weighted towards higher values
+    random-range-1-45: 0 # random value between 1 and 45
+
+  bandage_fill:
+    # What percentage of the multiworld should the remaining items be bandages.
+    # This setting only works if your goal is bandages
+    #
+    # You can define additional values between the minimum and maximum values.
+    # Minimum value is 0
+    # Maximum value is 100
+    random-range-high-0-49: 1
+    50: 3
+    random-range-low-51-100: 1
+
+  death_link:
+    # When you die, everyone who enabled death link dies. Of course, the reverse is true too.
+    'false': 50
+    'true': 0
+
+  death_link_amnesty:
+    # How many deaths should it take to send a DeathLink
+    #
+    # You can define additional values between the minimum and maximum values.
+    # Minimum value is 1
+    # Maximum value is 20
+    10: 50
+    random: 0
+    random-low: 0 # random value weighted towards lower values
+    random-high: 0 # random value weighted towards higher values
+    random-range-1-20: 0 # random value between 1 and 20
+
+  ###########################
+  # Item & Location Options #
+  ###########################
+  local_items:
+    # Forces these items to be in their native world.
+    []
+
+  non_local_items:
+    # Forces these items to be outside their native world.
+    []
+
+  start_inventory:
+    # Start with the specified amount of these items. Example: "Bomb: 1"
+    {}
+
+  start_hints:
+    # Start with these item's locations prefilled into the ``!hint`` command.
+    []
+
+  start_location_hints:
+    # Start with these locations and their item prefilled into the ``!hint`` command.
+    []
+
+  exclude_locations:
+    # Prevent these locations from having an important item.
+    []
+
+  priority_locations:
+    # Prevent these locations from having an unimportant item.
+    []
+
+  item_links:
+    # Share part of your item pool with other players.
+    []
+
+  plando_items:
+    # Generic items plando.
+    []
