@@ -911,7 +911,6 @@ Pokemon Red and Blue:
     options:
       Pokemon Red and Blue:
         minimum_catch_rate: 255
-
   # if trainersanity is disabled, have fewer blind trainers
   - option_category: Pokemon Red and Blue
     option_name: trainersanity

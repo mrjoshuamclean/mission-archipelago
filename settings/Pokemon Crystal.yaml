@@ -1343,10 +1343,8 @@ Pokemon Crystal:
     # You can define additional values between the minimum and maximum values.
     # Minimum value is 0
     # Maximum value is 255
-    0: 50
-    random: 0
-    random-low: 0
-    random-high: 0
+    # Default 0
+    255: 1 # for when dexsanity is enabled
 
   always_unlock_fly_destinations:
     # Always unlock Fly destinations when entering a town, even if Randomize Fly Unlocks is enabled
@@ -1528,3 +1526,14 @@ Pokemon Crystal:
           - "Johto Marts"
           - "Kanto Marts"
           - "Game Corners"
+  # if dexsanity is disabled, use weights for catch rate
+  - option_category: Pokemon Crystal
+    option_name: dexsanity
+    option_result: 0
+    options:
+      Pokemon Crystal:
+        minimum_catch_rate:
+          random-range-high-0-9: 1
+          random-range-middle-10-30: 16
+          random-range-low-31-200: 4
+          random-range-low-201-255: 1
