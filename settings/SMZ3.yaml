@@ -7,18 +7,7 @@ SMZ3:
   # Game Options
   progression_balancing: normal
 
-  accessibility:
-    # Set rules for reachability of your items/locations.
-    # 
-    # **Full:** ensure everything can be reached and acquired.
-    # 
-    # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    # 
-    # **Items:** ensure all logically relevant items can be acquired. Some items, such as keys, may be self-locking, and
-    # some locations may be inaccessible.
-    full: 0
-    minimal: 0
-    items: 50
+  accessibility: items
 
   sm_logic:
     # This option selects what kind of logic to use for item placement inside
@@ -166,3 +155,13 @@ SMZ3:
     options:
       SMZ3:
         ganon_vulnerable: random-range-1-7
+
+  # if morph ball is early, make it local (this can block almost all oF SM,
+  # whereas sword is less necessary)
+  - option_category: SMZ3
+    option_name: morph_location
+    option_result: early
+    options:
+      SMZ3:
+        +local_items:
+          - "Morph"
