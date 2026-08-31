@@ -223,8 +223,9 @@ Final Fantasy IV Free Enterprise:
     # You can define additional values between the minimum and maximum values.
     # Minimum value is 1
     # Maximum value is 5
-    random-range-high-1-4: 1
-    5: 8
+    #
+    # NOTE: Set below with party_type; this is always overridden
+    5: 1
 
   CharactersPermajoin:
     # If enabled, characters may not be dismissed from the party.
@@ -449,7 +450,27 @@ Final Fantasy IV Free Enterprise:
     # Generic items plando.
     []
 
+  party_type:
+    # reduced: 1-4 party members, weighted higher
+    # full: standard 5-member party
+    reduced: 1
+    full: 16
+
   triggers:
+  # party_type
+  - option_category: Final Fantasy IV Free Enterprise
+    option_name: party_type
+    option_result: reduced
+    options:
+      Final Fantasy IV Free Enterprise:
+        PartySize: random-range-high-1-4
+  # party_type
+  - option_category: Final Fantasy IV Free Enterprise
+    option_name: party_type
+    option_result: full
+    options:
+      Final Fantasy IV Free Enterprise:
+        PartySize: 5
 
   # MainObjective
   - option_category: Final Fantasy IV Free Enterprise
