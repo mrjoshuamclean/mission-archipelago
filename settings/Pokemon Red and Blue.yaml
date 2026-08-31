@@ -481,10 +481,11 @@ Pokemon Red and Blue:
     # You can define additional values between the minimum and maximum values.
     # Minimum value is 1
     # Maximum value is 255
-    3: 50
-    random: 0
-    random-low: 0
-    random-high: 0
+    # Default 3
+    random-range-high-1-9: 1
+    random-range-middle-10-30: 16
+    random-range-low-31-200: 4
+    random-range-low-201-255: 1
 
   randomize_trainer_parties:
     # Randomize enemy Pokemon encountered in trainer battles.
@@ -891,6 +892,26 @@ Pokemon Red and Blue:
       Pokemon Red and Blue:
         elite_four_pokedex_condition: 0
         randomize_pokedex: start_with
+  # if dexsanity is enabled, guarantee catches
+  - option_category: Pokemon Red and Blue
+    option_name: dexsanity
+    option_result: random-range-low-1-50
+    options:
+      Pokemon Red and Blue:
+        minimum_catch_rate: 255
+  - option_category: Pokemon Red and Blue
+    option_name: dexsanity
+    option_result: random-range-low-51-100
+    options:
+      Pokemon Red and Blue:
+        minimum_catch_rate: 255
+  - option_category: Pokemon Red and Blue
+    option_name: dexsanity
+    option_result: random-range-low-101-151
+    options:
+      Pokemon Red and Blue:
+        minimum_catch_rate: 255
+
   # if trainersanity is disabled, have fewer blind trainers
   - option_category: Pokemon Red and Blue
     option_name: trainersanity
