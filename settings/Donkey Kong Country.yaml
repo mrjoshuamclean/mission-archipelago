@@ -401,3 +401,48 @@ Donkey Kong Country:
   item_links:
     # Share part of your item pool with other players.
     []
+
+  starting_ability:
+    carry: 1
+    climb: 1
+    gorilla_slap: 1
+    roll: 1
+    swim: 1
+
+  triggers:
+  # starting_ability
+  - option_category: Donkey Kong Country
+    option_name: starting_ability
+    option_result: carry
+    options:
+      Donkey Kong Country:
+        +start_inventory:
+          Carry: 1
+  - option_category: Donkey Kong Country
+    option_name: starting_ability
+    option_result: climb
+    options:
+      Donkey Kong Country:
+        +start_inventory:
+          Climb: 1
+  - option_category: Donkey Kong Country
+    option_name: starting_ability
+    option_result: gorilla_slap
+    options:
+      Donkey Kong Country:
+        +start_inventory:
+          Gorilla Slap: 1
+  - option_category: Donkey Kong Country
+    option_name: starting_ability
+    option_result: roll
+    options:
+      Donkey Kong Country:
+        +start_inventory:
+          Roll: 1
+  - option_category: Donkey Kong Country
+    option_name: starting_ability
+    option_result: swim
+    options:
+      Donkey Kong Country:
+        +start_inventory:
+          Swim: 1

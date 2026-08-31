@@ -291,30 +291,12 @@ Donkey Kong Country 2:
     # Remove the leading # from anything you want from here
 
     - 'A Link to the Past'
-    #- 'Actraiser'
-    #- 'Adventure'
-    #- 'Astalon'
-    #- 'Banjo-Tooie'
     - 'Castlevania - Circle of the Moon'
-    #- 'Cave Story'
-    #- 'Diddy Kong Racing'
     - 'Donkey Kong 64'
     - 'Donkey Kong Country'
-    #- 'Donkey Kong Country 2'
-    #- 'Donkey Kong Country 3'
-    #- 'EarthBound'
     - 'Final Fantasy Mystic Quest'
-    #- 'Genshin Impact'
-    #- 'Hollow Knight'
-    #- 'Kingdom Hearts'
-    #- 'Kingdom Hearts 2'
     - 'Kirby 64 - The Crystal Shards'
-    #- 'Kirby Super Star'
-    #- "Kirby's Dream Land 3"
-    #- "Luigi's Mansion"
     - "Majora's Mask Recompiled"
-    #- 'Mario & Luigi Superstar Saga'
-    #- 'Mario Kart Double Dash'
     - 'Math'
     - 'Mega Man 2'
     - 'Mega Man 3'
@@ -322,28 +304,16 @@ Donkey Kong Country 2:
     - 'Mega Man X2'
     - 'Mega Man X3'
     - 'Ocarina of Time'
-    #- 'Overcooked! 2'
-    #- 'Paper Mario'
-    #- 'Paper Mario The Thousand Year Door'
     - 'Pokemon Crystal'
-    #- 'Pokemon Emerald'
     - 'Pokemon Red and Blue'
-    #- 'Rabi-Ribi'
-    #- 'Risk of Rain 2'
-    #- 'Skyward Sword'
     - 'Sonic Adventure 2 Battle'
     - 'Subnautica'
     - 'Super Mario 64'
     - 'Super Mario World'
     - 'Super Metroid'
     - 'Symphony of the Night'
-    #- 'Terraria'
     - 'The Legend of Zelda'
     - 'VVVVVV'
-    #- 'Xenoblade X'
-    #- "Yoshi's Island"
-    #- 'Zelda II: The Adventure of Link'
-    #- 'Zillion'
 
   swanky_excluded_topics:
     # Which topics will be excluded from Swanky's Bonus Bonanza pool of questions.
@@ -355,56 +325,32 @@ Donkey Kong Country 2:
     # 
     # Remove the leading # from anything you want from here
     
-    #- 'A Link to the Past'
     - 'Actraiser'
     - 'Adventure'
     - 'Astalon'
     - 'Banjo-Tooie'
-    #- 'Castlevania - Circle of the Moon'
     - 'Cave Story'
     - 'Diddy Kong Racing'
-    #- 'Donkey Kong 64'
-    #- 'Donkey Kong Country'
     - 'Donkey Kong Country 2'
     - 'Donkey Kong Country 3'
     - 'EarthBound'
-    #- 'Final Fantasy Mystic Quest'
     - 'Genshin Impact'
     - 'Hollow Knight'
     - 'Kingdom Hearts'
     - 'Kingdom Hearts 2'
-    #- 'Kirby 64 - The Crystal Shards'
     - 'Kirby Super Star'
     - "Kirby's Dream Land 3"
     - "Luigi's Mansion"
-    #- "Majora's Mask Recompiled"
     - 'Mario & Luigi Superstar Saga'
     - 'Mario Kart Double Dash'
-    #- 'Math'
-    #- 'Mega Man 2'
-    #- 'Mega Man 3'
-    #- 'Mega Man X'
-    #- 'Mega Man X2'
-    #- 'Mega Man X3'
-    #- 'Ocarina of Time'
     - 'Overcooked! 2'
     - 'Paper Mario'
     - 'Paper Mario The Thousand Year Door'
-    #- 'Pokemon Crystal'
     - 'Pokemon Emerald'
-    #- 'Pokemon Red and Blue'
     - 'Rabi-Ribi'
     - 'Risk of Rain 2'
     - 'Skyward Sword'
-    #- 'Sonic Adventure 2 Battle'
-    #- 'Subnautica'
-    #- 'Super Mario 64'
-    #- 'Super Mario World'
-    #- 'Super Metroid'
-    #- 'Symphony of the Night'
     - 'Terraria'
-    #- 'The Legend of Zelda'
-    #- 'VVVVVV'
     - 'Xenoblade X'
     - "Yoshi's Island"
     - 'Zelda II: The Adventure of Link'
@@ -747,3 +693,64 @@ Donkey Kong Country 2:
   plando_items:
     # Generic items plando.
     []
+
+  starting_ability:
+    carry: 1
+    cartwheel: 1
+    climb: 1
+    cling: 1
+    helicopter_spin: 1
+    swim: 1
+    team_attack: 1
+
+  triggers:
+  # starting_ability
+  - option_category: Donkey Kong Country 2
+    option_name: starting_ability
+    option_result: carry
+    options:
+      Donkey Kong Country 2:
+        +start_inventory:
+          Carry: 1
+  - option_category: Donkey Kong Country 2
+    option_name: starting_ability
+    option_result: cartwheel
+    options:
+      Donkey Kong Country 2:
+        +start_inventory:
+          Cartwheel: 1
+  - option_category: Donkey Kong Country 2
+    option_name: starting_ability
+    option_result: climb
+    options:
+      Donkey Kong Country 2:
+        +start_inventory:
+          Climb: 1
+  - option_category: Donkey Kong Country 2
+    option_name: starting_ability
+    option_result: cling
+    options:
+      Donkey Kong Country 2:
+        +start_inventory:
+          Cling: 1
+  - option_category: Donkey Kong Country 2
+    option_name: starting_ability
+    option_result: helicopter_spin
+    options:
+      Donkey Kong Country 2:
+        +start_inventory:
+          Helicopter Spin: 1
+  - option_category: Donkey Kong Country 2
+    option_name: starting_ability
+    option_result: swim
+    options:
+      Donkey Kong Country 2:
+        +start_inventory:
+          Swim: 1
+  - option_category: Donkey Kong Country 2
+    option_name: starting_ability
+    option_result: team_attack
+    options:
+      Donkey Kong Country 2:
+        +start_inventory:
+          Team Attack: 1
