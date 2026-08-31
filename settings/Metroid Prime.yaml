@@ -316,18 +316,6 @@ Metroid Prime:
     # Forces these items to be in their native world.
     [
       "Morph Ball",
-      "Artifact of Truth",
-      "Artifact of Chozo",
-      "Artifact of Lifegiver",
-      "Artifact of Wild",
-      "Artifact of World",
-      "Artifact of Nature",
-      "Artifact of Strength",
-      "Artifact of Sun",
-      "Artifact of Elder",
-      "Artifact of Spirit",
-      "Artifact of Warrior",
-      "Artifact of Newborn",
     ]
 
   non_local_items:
@@ -375,3 +363,34 @@ Metroid Prime:
         pre_scan_elevators:
           'false': 2
           'true': 1
+      
+  # if 2-4 required artifacts, make beams local
+  - option_category: Metroid Prime
+    option_name: required_artifacts
+    option_result: random-range-high-2-4
+    options:
+      Metroid Prime:
+        +local_items:
+          - "Power Beam"
+          - "Ice Beam"
+          - "Wave Beam"
+          - "Plasma Beam"
+  # if >= 5 required artifacts, make them local
+  - option_category: Metroid Prime
+    option_name: required_artifacts
+    option_result: random-range-high-5-12
+    options:
+      Metroid Prime:
+        +local_items:
+          - "Artifact of Truth"
+          - "Artifact of Chozo"
+          - "Artifact of Lifegiver"
+          - "Artifact of Wild"
+          - "Artifact of World"
+          - "Artifact of Nature"
+          - "Artifact of Strength"
+          - "Artifact of Sun"
+          - "Artifact of Elder"
+          - "Artifact of Spirit"
+          - "Artifact of Warrior"
+          - "Artifact of Newborn"
