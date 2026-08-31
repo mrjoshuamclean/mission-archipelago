@@ -12,7 +12,10 @@ point.
 `ap-async.bat` to generate the worlds in your AP "output" directory
 (Alternatively, run `gen-async.bat; ap-async.bat` to do both at once)
 
+## Game Specific Notes
+
 ### Final Fantasy
+To include in generation:
 1. Generate an equal number of seeds on ffrandomizer.com matching the requested
 number set in yaml
 1. Put files from ffrandomizer.com (.nes and .yaml) in 
@@ -22,7 +25,10 @@ currently hardcoded)
 1. Generate as normal (see Usage above)
 1. Copy FFR .nes file to output directory and play this with NES connector (no AP file)
 
-## Notes
+### Mega Man X3
+Runs only on Snes9x core.
+
+## General Notes
 - USING WEIGHTS IS CURRENTLY BROKEN - ONLY USE OPTION 1 (COUNTS)
 
 - When using weights, Archipelago guarantees every game gets at least one seed,
