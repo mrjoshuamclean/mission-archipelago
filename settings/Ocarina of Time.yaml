@@ -313,7 +313,7 @@ Ocarina of Time:
     # Default is 20
     # Minimum value is 4
     # Maximum value is 20
-    random-range-high-4-20: 1
+    random-range-middle-4-20: 1
 
   # Shuffle
   shuffle_song_items:
@@ -889,7 +889,7 @@ Ocarina of Time:
         +local_items:
           - "Gold Skulltula Token"
 
-  # if bridge is hearts, make heart containers and pieces local
+  # if bridge is hearts, make heart containers
   - option_category: Ocarina of Time
     option_name: bridge
     option_result: hearts
@@ -897,9 +897,8 @@ Ocarina of Time:
       Ocarina of Time:
         +local_items:
           - "Heart Container"
-          - "Piece of Heart"
 
-  # if bridge is tokens, make skull tokens local
+  # if Ganon key is tokens, make skull tokens local
   - option_category: Ocarina of Time
     option_name: shuffle_ganon_bosskey
     option_result: tokens
@@ -908,7 +907,7 @@ Ocarina of Time:
         +local_items:
           - "Gold Skulltula Token"
 
-  # if bridge is hearts, make heart containers and pieces local
+  # if Ganon key is hearts, make heart containers
   - option_category: Ocarina of Time
     option_name: shuffle_ganon_bosskey
     option_result: hearts
@@ -916,7 +915,6 @@ Ocarina of Time:
       Ocarina of Time:
         +local_items:
           - "Heart Container"
-          - "Piece of Heart"
 
   ## CLOSED FOREST FIX ##
   ## If forest is closed, place specific item(s) in the forest to ensure
