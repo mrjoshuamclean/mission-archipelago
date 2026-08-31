@@ -416,33 +416,33 @@ Donkey Kong Country:
     option_result: carry
     options:
       Donkey Kong Country:
-        +start_inventory:
+        +start_inventory_from_pool:
           Carry: 1
   - option_category: Donkey Kong Country
     option_name: starting_ability
     option_result: climb
     options:
       Donkey Kong Country:
-        +start_inventory:
+        +start_inventory_from_pool:
           Climb: 1
   - option_category: Donkey Kong Country
     option_name: starting_ability
     option_result: gorilla_slap
     options:
       Donkey Kong Country:
-        +start_inventory:
+        +start_inventory_from_pool:
           Gorilla Slap: 1
   - option_category: Donkey Kong Country
     option_name: starting_ability
     option_result: roll
     options:
       Donkey Kong Country:
-        +start_inventory:
+        +start_inventory_from_pool:
           Roll: 1
   - option_category: Donkey Kong Country
     option_name: starting_ability
     option_result: swim
     options:
       Donkey Kong Country:
-        +start_inventory:
+        +start_inventory_from_pool:
           Swim: 1
