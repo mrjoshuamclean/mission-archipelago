@@ -34,7 +34,7 @@ DOOM II:
 
   start_inventory:
     # Start with these items.
-    "Shotgun": 1
+    {}
 
   max_ammo_bullets:
     # Starting maximum: 200-999, Default 200
@@ -118,7 +118,7 @@ DOOM II:
   start_inventory_from_pool:
     # Start with these items and don't place them in the world.
     # The game decides what the replacement items will be.
-    {}
+    "Shotgun": 1
 
   difficulty:
     # Choose the difficulty option. Those match DOOM's difficulty options.

@@ -92,7 +92,7 @@ DOOM 1993:
 
   start_inventory:
     # Start with these items.
-    "Shotgun": 1
+    {}
 
   start_hints:
     # Start with these item's locations prefilled into the !hint command.
@@ -117,7 +117,7 @@ DOOM 1993:
   start_inventory_from_pool:
     # Start with these items and don't place them in the world.
     # The game decides what the replacement items will be.
-    {}
+    "Shotgun": 1
 
   goal:
     # Choose the main goal.
