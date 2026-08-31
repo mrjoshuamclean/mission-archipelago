@@ -238,7 +238,13 @@ Symphony of the Night:
   ###########################
   local_items:
     # Forces these items to be in their native world.
-    []
+    [
+      "Ring of vlad",
+      "Heart of vlad",
+      "Rib of vlad",
+      "Tooth of vlad",
+      "Eye of vlad"
+    ]
 
   non_local_items:
     # Forces these items to be outside their native world.
