@@ -224,7 +224,7 @@ Ocarina of Time but it's just Master Quest Water Temple:
     'false': 50
     'true': 0
 
-  kokiri_color: random_chpoice # Choose a color. "random_choice" selects a random option. "completely_random" generates a random hex code.
+  kokiri_color: random_choice # Choose a color. "random_choice" selects a random option. "completely_random" generates a random hex code.
   goron_color: random_choice
     # Choose a color. "random_choice" selects a random option. "completely_random" generates a random hex code.
   zora_color: random_choice # Choose a color. "random_choice" selects a random option. "completely_random" generates a random hex code.
