@@ -79,13 +79,13 @@ Super Mario Land 2:
     # You can define additional values between the minimum and maximum values.
     # Default is 150
     # Minimum value is 31
-    # Maximum value is 2599
+    # Maximum value is 2597
     random-range-middle-31-271: 32
     random-range-low-272-400: 16
     random-range-low-401-600: 8
     random-range-low-601-1000: 4
     random-range-low-1001-1500: 2
-    random-range-low-1501-2599: 1
+    random-range-low-1501-2597: 1
 
   shuffle_midway_bells:
     # Shuffle Midway Bells into the item pool. You can always start at the beginning of a level after obtaining the
@@ -190,3 +190,19 @@ Super Mario Land 2:
   item_links:
     # Share part of your item pool with other players.
     []
+
+  triggers:
+  # coinsanity and midway rando are mutually exclusive (requires a weird level
+  # restart to get all coins)
+  - option_category: Super Mario Land 2
+    option_name: coinsanity
+    option_result: true
+    options:
+      Super Mario Land 2:
+        shuffle_midway_bells: false
+  - option_category: Super Mario Land 2
+    option_name: shuffle_midway_bells
+    option_result: true
+    options:
+      Super Mario Land 2:
+        coinsanity: false
