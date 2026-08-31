@@ -710,47 +710,47 @@ Donkey Kong Country 2:
     option_result: carry
     options:
       Donkey Kong Country 2:
-        +start_inventory:
+        +start_inventory_from_pool:
           Carry: 1
   - option_category: Donkey Kong Country 2
     option_name: starting_ability
     option_result: cartwheel
     options:
       Donkey Kong Country 2:
-        +start_inventory:
+        +start_inventory_from_pool:
           Cartwheel: 1
   - option_category: Donkey Kong Country 2
     option_name: starting_ability
     option_result: climb
     options:
       Donkey Kong Country 2:
-        +start_inventory:
+        +start_inventory_from_pool:
           Climb: 1
   - option_category: Donkey Kong Country 2
     option_name: starting_ability
     option_result: cling
     options:
       Donkey Kong Country 2:
-        +start_inventory:
+        +start_inventory_from_pool:
           Cling: 1
   - option_category: Donkey Kong Country 2
     option_name: starting_ability
     option_result: helicopter_spin
     options:
       Donkey Kong Country 2:
-        +start_inventory:
+        +start_inventory_from_pool:
           Helicopter Spin: 1
   - option_category: Donkey Kong Country 2
     option_name: starting_ability
     option_result: swim
     options:
       Donkey Kong Country 2:
-        +start_inventory:
+        +start_inventory_from_pool:
           Swim: 1
   - option_category: Donkey Kong Country 2
     option_name: starting_ability
     option_result: team_attack
     options:
       Donkey Kong Country 2:
-        +start_inventory:
+        +start_inventory_from_pool:
           Team Attack: 1
