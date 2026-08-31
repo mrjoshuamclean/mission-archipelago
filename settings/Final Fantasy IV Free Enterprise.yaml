@@ -303,11 +303,11 @@ Final Fantasy IV Free Enterprise:
   #######################
   ShopRandomization:
     # Affects the placement of items in shops. See FE documentation for more for now.
-    vanilla: 1
-    shuffle: 2
-    standard: 16
-    pro: 8
-    wild: 4
+    vanilla: 8
+    shuffle: 32
+    standard: 32
+    pro: 2
+    wild: 1
     cabins: 0
 
   FreeShops:
