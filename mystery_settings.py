@@ -61,6 +61,10 @@ class MysterySettings(dict):
         for meta in ("name", "description", "requires"):
             options.pop(meta, None)
 
+        # stupid override for the idiots who put a colon in Metroid Zero Mission
+        if game_key == "Metroid Zero Mission":
+            game_key = "Metroid: Zero Mission"
+
         return {
             "game": game_key,
             "name": info["name"],
