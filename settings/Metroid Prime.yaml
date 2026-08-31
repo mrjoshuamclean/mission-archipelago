@@ -29,7 +29,7 @@ Metroid Prime:
     # Minimum value is 1
     # Maximum value is 12
     random-range-high-2-4: 3
-    random-range-high-5-12: 16
+    random-range-low-5-12: 16
 
   artifact_hints:
     # If enabled, scanning the artifact stones in the temple will give a hint to their location. Additionally, hints will be pre collected in the client.
@@ -378,7 +378,7 @@ Metroid Prime:
   # if >= 5 required artifacts, make them local
   - option_category: Metroid Prime
     option_name: required_artifacts
-    option_result: random-range-high-5-12
+    option_result: random-range-low-5-12
     options:
       Metroid Prime:
         +local_items:
