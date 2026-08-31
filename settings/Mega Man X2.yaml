@@ -88,8 +88,8 @@ Mega Man X2:
 
   long_jumps:
     # Allows X to perform longer jumps when holding down the Dash button.
-    'false': 50
-    'true': 0
+    'false': 4
+    'true': 1
 
   shoryuken_in_pool:
     # Adds Shoryuken to the item pool.

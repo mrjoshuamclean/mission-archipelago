@@ -98,8 +98,8 @@ Mega Man X:
 
   long_jumps:
     # Allows X to perform longer jumps when holding down the Dash button. Only works after getting a Legs Upgrade.
-    'false': 50
-    'true': 0
+    'false': 4
+    'true': 1
 
   air_dash:
     # Adds another Legs Upgrade that allows X to perform an Air Dash.
