@@ -1,28 +1,14 @@
 ﻿name: MMX3-{player}
 
-# Used to describe your yaml. Useful if you have multiple files.
-description: Mega Man X3 - Random
-
-game: Mega Man X3
+description: Mission Archipelago - Mega Man X3
 requires:
-  version: 0.6.2 # Version of Archipelago required for this yaml to work as expected.
+  version: 0.6.7 # Version of Archipelago required for this yaml to work as expected.
 
 Mega Man X3:
-  # Game Options
-  progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # 
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 99
-    random: 0
-    random-low: 0
-    random-high: 0
-    disabled: 0 # equivalent to 0
-    normal: 50 # equivalent to 50
-    extreme: 0 # equivalent to 99
+  ################
+  # Game Options #
+  ################
+  progression_balancing: normal
 
   accessibility:
     # Set rules for reachability of your items/locations.
@@ -32,10 +18,6 @@ Mega Man X3:
     # **Minimal:** ensure what is needed to reach your goal can be acquired.
     full: 50
     minimal: 0
-
-  plando_items:
-    # Generic items plando.
-    []
 
   death_link:
     # When you die, everyone who enabled death link dies. Of course, the reverse is true too.
@@ -66,7 +48,9 @@ Mega Man X3:
     'false': 4
     'true': 1
 
-  # Gameplay Options
+  ####################
+  # Gameplay Options #
+  ####################
   starting_life_count:
     # How many lives to start the game with.
     # 
@@ -75,10 +59,9 @@ Mega Man X3:
     # You can define additional values between the minimum and maximum values.
     # Minimum value is 0
     # Maximum value is 99
-    2: 0
-    random: 1
-    random-low: 0
-    random-high: 0
+    # Default 2
+    random-range-middle-1-3: 2
+    random-range-low-3-6: 1
 
   starting_hp:
     # How much HP X will have at the start of the game.
@@ -88,10 +71,8 @@ Mega Man X3:
     # You can define additional values between the minimum and maximum values.
     # Minimum value is 1
     # Maximum value is 32
-    16: 0
-    random: 1
-    random-low: 0
-    random-high: 0
+    # Default 16
+    random-range-middle-1-32: 1
 
   heart_tank_effectiveness:
     # How many units of HP each Heart tank will provide to the user.
@@ -101,26 +82,24 @@ Mega Man X3:
     # You can define additional values between the minimum and maximum values.
     # Minimum value is 1
     # Maximum value is 8
-    2: 0
-    random: 1
-    random-low: 0
-    random-high: 0
+    # Default 2
+    random-range-low-2-8: 1
 
   jammed_buster:
     # Jams X's buster making it only able to shoot lemons.
     # Note: This adds another Arms Upgrade into the item pool.
-    'false': 2
+    'false': 4
     'true': 1
 
   disable_charge_freeze:
     # Allows X and Zero to move while shooting a level 3 charged shot.
-    'false': 0
-    'true': 50
+    'false': 1
+    'true': 2
 
   long_jumps:
     # Allows X to perform longer jumps when holding down the Dash button. Only works after getting a Legs Upgrade.
-    'false': 50
-    'true': 0
+    'false': 4
+    'true': 1
 
   zsaber_in_pool:
     # Adds Z-Saber to the item pool.
@@ -186,7 +165,9 @@ Mega Man X3:
     'false': 1
     'true': 2
 
-  # Boss Weakness Options
+  #########################
+  # Boss Weakness Options #
+  #########################
   boss_weakness_rando:
     # Every main boss will have its weakness randomized.
     # 
@@ -244,7 +225,16 @@ Mega Man X3:
     'false': 0
     'true': 50
 
-  # Dr. Doppler's Lab Options
+  #############################
+  # Dr. Doppler's Lab Options #
+  #############################
+  doppler_requirement:
+    medals: 4
+    weapons: 4
+    armor-upgrades: 2
+    heart-tanks: 1
+    sub-tanks: 1
+
   doppler_open:
     # Under which conditions will Dr. Doppler's lab open.
     # If no options are selected a multiworld item granting access to the lab will be created.
@@ -254,6 +244,8 @@ Mega Man X3:
     # Armor Upgrades: Consider upgrades to get access to the lab.
     # Heart Tanks: Consider heart tanks to get access to the lab.
     # Sub Tanks: Consider sub tanks to get access to the lab.
+    #
+    # NOTE this is overridden by the doppler_requirement and triggers
     ['Medals']
 
   doppler_medal_count:
@@ -262,10 +254,8 @@ Mega Man X3:
     # You can define additional values between the minimum and maximum values.
     # Minimum value is 0
     # Maximum value is 8
-    8: 0
-    random: 1
-    random-low: 0
-    random-high: 0
+    random-range-0-4: 1
+    random-range-5-8: 2
 
   doppler_weapon_count:
     # How many weapons are required to access Dr. Doppler's Lab.
@@ -273,10 +263,8 @@ Mega Man X3:
     # You can define additional values between the minimum and maximum values.
     # Minimum value is 0
     # Maximum value is 6
-    6: 50
-    random: 0
-    random-low: 0
-    random-high: 0
+    random-range-0-3: 1
+    random-range-4-6: 2
 
   doppler_upgrade_count:
     # How many armor upgrades are required to access Dr. Doppler's Lab.
@@ -284,10 +272,8 @@ Mega Man X3:
     # You can define additional values between the minimum and maximum values.
     # Minimum value is 0
     # Maximum value is 5
-    4: 50
-    random: 0
-    random-low: 0
-    random-high: 0
+    random-range-0-2: 1
+    random-range-3-4: 2
 
   doppler_heart_tank_count:
     # How many Heart Tanks are required to access Dr. Doppler's Lab.
@@ -295,10 +281,8 @@ Mega Man X3:
     # You can define additional values between the minimum and maximum values.
     # Minimum value is 0
     # Maximum value is 6
-    6: 50
-    random: 0
-    random-low: 0
-    random-high: 0
+    random-range-0-3: 1
+    random-range-4-6: 2
 
   doppler_sub_tank_count:
     # How many Sub Tanks are required to access Dr. Doppler's Lab.
@@ -306,17 +290,14 @@ Mega Man X3:
     # You can define additional values between the minimum and maximum values.
     # Minimum value is 0
     # Maximum value is 2
-    2: 50
-    random: 0
-    random-low: 0
-    random-high: 0
+    random: 1
 
   doppler_lab_2_boss:
     # Which boss will appear in the second Dr Doppler's Lab stage.
     # 
     # Note: Also affects the stage variation.
-    volt_kurageil: 50
-    vile: 0
+    volt_kurageil: 2
+    vile: 1
 
   doppler_lab_3_boss_rematch_count:
     # How many boss rematches are needed in the third Dr. Doppler's Lab stage.
@@ -324,26 +305,33 @@ Mega Man X3:
     # You can define additional values between the minimum and maximum values.
     # Minimum value is 0
     # Maximum value is 8
-    8: 50
-    random: 0
-    random-low: 0
-    random-high: 0
+    random-range-0-4: 1
+    random-range-5-8: 2
 
   doppler_all_labs:
     # Whether to unlock Dr. Doppler's Lab 1-3 levels as a group or not.
     # 
     # Unlocking level 4 requires getting all Lab levels cleared.
-    'false': 50
-    'true': 0
+    'false': 2
+    'true': 1
 
   logic_vile_required:
     # Adds a logic check for Dr. Doppler's Lab access so that it expects Vile to be defeated before accessing it.
     # 
     # Note: It does not affect the actual Dr. Doppler's Lab access options.
     'false': 1
-    'true': 2
+    'true': 8
 
-  # Vile's Stage Options
+  ########################
+  # Vile's Stage Options #
+  ########################
+  vile_requirement:
+    medals: 4
+    weapons: 4
+    armor-upgrades: 2
+    heart-tanks: 1
+    sub-tanks: 1
+
   vile_open:
     # Under which conditions will Vile's Stage open.
     # If no options are selected a multiworld item granting access to the stage will be created.
@@ -353,6 +341,8 @@ Mega Man X3:
     # Armor Upgrades: Consider upgrades to get access to the lab.
     # Heart Tanks: Consider heart tanks to get access to the lab.
     # Sub Tanks: Consider sub tanks to get access to the lab.
+    #
+    # NOTE this is overridden by the vile_requirement and triggers
     ['Medals']
 
   vile_medal_count:
@@ -361,10 +351,8 @@ Mega Man X3:
     # You can define additional values between the minimum and maximum values.
     # Minimum value is 0
     # Maximum value is 8
-    2: 0
-    random: 1
-    random-low: 0
-    random-high: 0
+    random-range-middle-0-4: 4
+    random-range-low-5-8: 1
 
   vile_weapon_count:
     # How many weapons are required to access Vile's Stage.
@@ -372,10 +360,8 @@ Mega Man X3:
     # You can define additional values between the minimum and maximum values.
     # Minimum value is 0
     # Maximum value is 6
-    2: 50
-    random: 0
-    random-low: 0
-    random-high: 0
+    random-range-middle-0-3: 1
+    random-range-low-4-6: 2
 
   vile_upgrade_count:
     # How many armor upgrades are required to access Vile's Stage.
@@ -383,10 +369,7 @@ Mega Man X3:
     # You can define additional values between the minimum and maximum values.
     # Minimum value is 0
     # Maximum value is 5
-    4: 50
-    random: 0
-    random-low: 0
-    random-high: 0
+    random-range-high-0-5: 1
 
   vile_heart_tank_count:
     # How many Heart Tanks are required to access Vile's Stage.
@@ -394,10 +377,8 @@ Mega Man X3:
     # You can define additional values between the minimum and maximum values.
     # Minimum value is 0
     # Maximum value is 6
-    4: 50
-    random: 0
-    random-low: 0
-    random-high: 0
+    random-range-high-0-1: 1
+    random-range-middle-2-6: 2
 
   vile_sub_tank_count:
     # How many Sub Tanks are required to access Vile's Stage.
@@ -405,22 +386,19 @@ Mega Man X3:
     # You can define additional values between the minimum and maximum values.
     # Minimum value is 0
     # Maximum value is 2
-    2: 50
-    random: 0
-    random-low: 0
-    random-high: 0
+    random-range-high-0-2: 1
 
-  # Bit & Byte Options
+  ######################
+  # Bit & Byte Options #
+  ######################
   bit_medal_count:
     # How many Maverick Medals are required to access Bit's fight.
     #
     # You can define additional values between the minimum and maximum values.
     # Minimum value is 0
     # Maximum value is 5
-    2: 0
-    random: 1
-    random-low: 0
-    random-high: 0
+    # Default 2
+    random-range-low-0-5: 1
 
   byte_medal_count:
     # How many Maverick Medals are required to access Byte's fight.
@@ -430,12 +408,12 @@ Mega Man X3:
     # You can define additional values between the minimum and maximum values.
     # Minimum value is 1
     # Maximum value is 6
-    5: 0
-    random: 1
-    random-low: 0
-    random-high: 0
+    # Default 5
+    random-range-high-1-6: 1
 
-  # Aesthetic
+  #############
+  # Aesthetic #
+  #############
   player_palettes:
     # Allows you to create colors for each weapon X has. Includes charge levels and Gold Armor customization.
     # This will override the option preset
@@ -1157,7 +1135,9 @@ Mega Man X3:
     yohane: 0
     okayu: 0
 
-  # Item & Location Options
+  ###########################
+  # Item & Location Options #
+  ###########################
   local_items:
     # Forces these items to be in their native world.
     []
@@ -1167,11 +1147,11 @@ Mega Man X3:
     []
 
   start_inventory:
-    # Start with these items.
+    # Start with the specified amount of these items. Example: "Bomb: 1"
     {}
 
   start_inventory_from_pool:
-    # Start with these items and don't place them in the world.
+    # Start with the specified amount of these items and don't place them in the world. Example: "Bomb: 1"
     # 
     # The game decides what the replacement items will be.
     {}
@@ -1195,3 +1175,72 @@ Mega Man X3:
   item_links:
     # Share part of your item pool with other players.
     []
+
+  plando_items:
+    # Generic items plando.
+    []
+
+  triggers:
+  # Determine single goal for doppler unlock
+  - option_category: Mega Man X3
+    option_name: doppler_requirement
+    option_result: medals
+    options:
+      Mega Man X3:
+        doppler_open: ["Medals"]
+  - option_category: Mega Man X3
+    option_name: doppler_requirement
+    option_result: weapons
+    options:
+      Mega Man X3:
+        doppler_open: ["Weapons"]
+  - option_category: Mega Man X3
+    option_name: doppler_requirement
+    option_result: armor-upgrades
+    options:
+      Mega Man X3:
+        doppler_open: ["Armor Upgrades"]
+  - option_category: Mega Man X3
+    option_name: doppler_requirement
+    option_result: heart-tanks
+    options:
+      Mega Man X3:
+        doppler_open: ["Heart Tanks"]
+  - option_category: Mega Man X3
+    option_name: doppler_requirement
+    option_result: sub-tanks
+    options:
+      Mega Man X3:
+        doppler_open: ["Sub Tanks"]
+
+  # Determine single goal for vile unlock
+  - option_category: Mega Man X3
+    option_name: vile_requirement
+    option_result: medals
+    options:
+      Mega Man X3:
+        vile_open: ["Medals"]
+  - option_category: Mega Man X3
+    option_name: vile_requirement
+    option_result: weapons
+    options:
+      Mega Man X3:
+        vile_open: ["Weapons"]
+  - option_category: Mega Man X3
+    option_name: vile_requirement
+    option_result: armor-upgrades
+    options:
+      Mega Man X3:
+        vile_open: ["Armor Upgrades"]
+  - option_category: Mega Man X3
+    option_name: vile_requirement
+    option_result: heart-tanks
+    options:
+      Mega Man X3:
+        vile_open: ["Heart Tanks"]
+  - option_category: Mega Man X3
+    option_name: vile_requirement
+    option_result: sub-tanks
+    options:
+      Mega Man X3:
+        vile_open: ["Sub Tanks"]
