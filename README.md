@@ -1,6 +1,6 @@
 # Mission Archipelago
 Multiworld yaml generator for [Archipelago](www.archipelago.gg) asyncs run by
-[Retro Indie Josh](retroindiejosh.itch.io). Props to [Async
+[Arkeia](https://arkeiamusic.itch.io). Props to [Async
 Tools](https://github.com/ArchipelagoMW/AsyncTools) for giving me a starting
 point.
 
