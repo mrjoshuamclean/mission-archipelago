@@ -17,8 +17,8 @@ Super Mario Land 2:
     # **Items:** ensure all logically relevant items can be acquired. Some items, such as keys, may be self-locking, and
     # some locations may be inaccessible.
     full: 0
-    minimal: 0
-    items: 50
+    minimal: 1
+    items: 0
 
   plando_items:
     # Generic items plando.

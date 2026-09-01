@@ -14,8 +14,8 @@ Links Awakening DX:
     # **Full:** ensure everything can be reached and acquired.
     # 
     # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
+    full: 0
+    minimal: 1
 
   gfxmod: 'false'
     # If enabled, the patcher will prompt the user for a modification file to change sprites in the game and optionally some text.

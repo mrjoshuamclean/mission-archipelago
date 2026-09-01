@@ -12,8 +12,8 @@ DOOM II:
     # Items: ensure all logically relevant items can be acquired.
     # Minimal: ensure what is needed to reach your goal can be acquired.
     locations: 0
-    items: 50
-    minimal: 0
+    items: 0
+    minimal: 1
 
   local_items:
     # Forces these items to be in their native world.

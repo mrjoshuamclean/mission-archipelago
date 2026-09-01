@@ -13,8 +13,8 @@ Yacht Dice:
     # **Full:** ensure everything can be reached and acquired.
     # 
     # **Minimal:** ensure what is needed to reach your goal can be acquired.
-    full: 50
-    minimal: 0
+    full: 0
+    minimal: 1
 
   plando_items:
     # Generic items plando.

@@ -16,9 +16,9 @@ The Messenger:
     # 
     # **Items:** ensure all logically relevant items can be acquired. Some items, such as keys, may be self-locking, and
     # some locations may be inaccessible.
-    full: 50
+    full: 0
     minimal: 0
-    items: 0
+    items: 1
 
   death_link: 'false' # When you die, everyone who enabled death link dies. Of course, the reverse is true too.
   logic_level: normal # The level of logic to use when determining what locations in your world are accessible.
