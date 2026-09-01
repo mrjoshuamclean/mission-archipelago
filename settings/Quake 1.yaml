@@ -21,26 +21,26 @@ Quake 1:
   difficulty:
     # Randomizer difficulty.
     # Higher levels offer less resources and worse items in the pool
-    easy: 2
-    medium: 4
-    hard: 1
-    extreme: 0
+    easy: 8
+    medium: 16
+    hard: 4
+    extreme: 1
 
   logic_difficulty:
     # Trick difficulty for logic.
     # Higher levels require harder tricks such precise Rocket/Grenade Jumps and airstrafes
-    easy: 2
-    medium: 4
-    hard: 1
+    easy: 4
+    medium: 1
+    hard: 0
     extreme: 0
 
   skill_level:
     # In-Game difficulty.
     # Primarily affects number of Enemies spawned
-    easy: 2
-    medium: 4
-    hard: 1
-    nightmare: 0
+    easy: 16
+    medium: 32
+    hard: 4
+    nightmare: 1
 
   basegame:
     # Pick which game/expansion to play
@@ -52,8 +52,8 @@ Quake 1:
 
   unlock_abilities:
     # Unlock Jumping, Diving, Running, Rocket/Grenade Jumps as items
-    'false': 1
-    'true': 4
+    'false': 2
+    'true': 1
 
   damage_remover_abilities:
     # Unlock the ability to not get hurt when doing rocket/grenade jumps
@@ -62,8 +62,8 @@ Quake 1:
 
   unlock_interact:
     # Unlock using buttons, shooting switches and opening doors as items
-    'false': 1
-    'true': 4
+    'false': 2
+    'true': 1
 
   area_maps:
     # Select if full game maps are available in the in-game map view
@@ -73,10 +73,10 @@ Quake 1:
 
   goal:
     # Choose the goal of the game
-    beat_all_bosses: 2
-    beat_all_levels: 4
-    collect_all_secrets: 1
-    all: 2
+    beat_all_bosses: 8
+    beat_all_levels: 32
+    collect_all_secrets: 2
+    all: 1
 
   goal_percentage:
     # Percentage of chosen goals that need to be reached to win the game
@@ -86,8 +86,8 @@ Quake 1:
     # Minimum value is 25
     # Maximum value is 100
     random-range-high-25-50: 1
-    random-range-high-51-75: 2
-    random-range-high-76-100: 4
+    random-range-middle-51-75: 2
+    random-range-low-76-100: 1
 
   included_locations_preset:
     # Presets for included locations.
@@ -231,8 +231,10 @@ Quake 1:
     # Default is 1
     # Minimum value is 1
     # Maximum value is 32
-    1: 4
-    random-range-low-2-32: 1
+    random-range-low-1-4: 64
+    random-range-low-5-8: 16
+    random-range-low-9-16: 4
+    random-range-low-17-32: 1
 
   progressive_weapons:
     # Replace weapon unlocks and ammunition capacity upgrades with progressive versions.
@@ -253,8 +255,11 @@ Quake 1:
     # Default is 10
     # Minimum value is 0
     # Maximum value is 90
-    random-range-middle-0-20: 4
-    random-range-low-21-90: 1
+    random-range-low-0-20: 32
+    random-range-low-20-39: 8
+    random-range-low-40-59: 4
+    random-range-low-60-79: 2
+    random-range-low-80-90: 1
 
   traps_as_progressive:
     # Traps show up as progressive items in-game.
@@ -264,7 +269,7 @@ Quake 1:
   shell_recharge:
     # Recharges 1 shell (ammo) every second.
     # QoL to make the early game less painful on harder difficulties.
-    'false': 4
+    'false': 0
     'true': 1
 
   powerup_recharge:
