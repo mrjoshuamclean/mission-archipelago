@@ -47,3 +47,12 @@ def _write_outputs(mystery, output_dir: str) -> None:
             with open(output_file, "w", encoding="utf-8") as gf:
                 yaml.safe_dump(data, gf, sort_keys=False)
             print(f"Wrote {output_file}")
+
+    # add archilink
+    output_file = os.path.join(output_dir, "archilink.yaml")
+    with open("settings/archilink.yaml", "r", encoding="utf-8") as f:
+        data = yaml.safe_load(f)
+    with open(output_file, "w", encoding="utf-8") as gf:
+        yaml.safe_dump(data, gf, sort_keys=False)
+    print("Archilink player included. See tools/archilink.json for settings to put in Discord.")
+    print(f"Wrote {output_file}")

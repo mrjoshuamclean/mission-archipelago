@@ -1,0 +1,25 @@
+{
+    "ArchipelagoConfig": {
+        "client_url" : "archipelago.gg",
+        "client_port" : "FROM_AP",
+        "password" : null,
+        "bot_slot" : "ArchiLink",
+        "self_hosted" : false,
+        "room_url" : "FROM_AP"
+    },
+    "DiscordConfig": {
+        "normal_channel_id" : "THREAD_ID",
+        "ping_channel_id" : "THREAD_ID", 
+        "admin_ids" : [305111971131293697]
+    },
+    "AdvancedConfig": {
+        "custom_deathlink_flavor" : false,
+        "new_items_on_join_game" : false,
+        "player_colors_limited" : false,
+        "item_messages_in_thread" : false,
+        "deathlink_messages_in_thread" : false,
+        "send_join_leave_messages" : false,
+        "item_display_level" : 2,
+        "display_traps" : false
+    }
+}
