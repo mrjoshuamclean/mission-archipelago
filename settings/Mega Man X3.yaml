@@ -456,7 +456,7 @@ Mega Man X3:
     x5_ultimate_armor: 1
     x6_shadow_armor: 1
     x6_blade_armor: 1
-  palette_charge_blue: charge_blu1
+  palette_charge_blue: charge_blue
   palette_charge_pink: charge_pink
   palette_charge_red: charge_red
   palette_charge_green: charge_green
