@@ -43,11 +43,6 @@ Mega Man X2:
     SELECT_R: A
     SHOT: Y
 
-  pickupsanity:
-    # Whether collecting freestanding 1ups, HP and Weapon Energy capsules will grant a check.
-    'false': 4
-    'true': 1
-
   # Gameplay Options
   starting_life_count:
     # How many lives to start the game with.
@@ -86,44 +81,33 @@ Mega Man X2:
     'false': 4
     'true': 1
 
-  long_jumps:
-    # Allows X to perform longer jumps when holding down the Dash button.
-    'false': 4
-    'true': 1
+  chips:
+    # Which chip items will be included in the game.
+    # Do note that this feature REQUIRES enabling pickup items as locations!
+    # 
+    # Supported enhancement chips:
+    # * "Quick Charge Chip" [MMX5] Halves charge time for X-Buster and Special Weapon shots
+    # * "Speedster Chip" [MMX5] Increases walking speed by 50%
+    # * "Super Recover Chip" [MMX5] Increases recovery from items by 25%
+    # * "Rapid Five Chip" [MMX5] Increases the amount of buster shots on screen to 5
+    # * "Speed Shot Chip" [MMX5] Increases default buster shot (lemons) horizontal speed by 50%
+    # * "Buster Plus Chip" [MMX5] Increases Buster damage by 1
+    # * "Weapon Plus Chip" [MMX6] Increases Weapon damage by 1
+    # * "D-Converter Chip" [MMX6] Refills the active weapon when taking damage
+    # * "D-Barrier Chip" [MMX6] Doubles the I-frames after getting hit
+    # * "Item Plus Chip" [MMX7] Increases item drop rates by roughly 33%
+    # * "Spike Walker Chip" [MMX8] Halves speed when sliding down a wall
+    ['Quick Charge Chip', 'Speedster Chip', 'Super Recover Chip', 'Rapid Five Chip', 'Speed Shot Chip', 'Buster Plus Chip', 'Weapon Plus Chip', 'D-Converter Chip', 'D-Barrier Chip', 'Item Plus Chip', 'Spike Walker Chip']
 
   shoryuken_in_pool:
     # Adds Shoryuken to the item pool.
     'false': 1
     'true': 4
 
-  shoryuken_use_hadouken_input:
-    # Makes Shoryuken use the Hadouken input.
-    'false': 50
-    'true': 0
-
-  quick_charge_in_pool:
-    # Adds Quick Charge Chip from Mega Man X5 into the item pool.
+  x_hunters_arena_medal_count:
+    # How many Maverick Medals are required to allow X-Hunters to spawn on their Arena areas in the main levels.
     # 
-    # Halves charge time for X-Buster and Special Weapon shots.
-    'false': 1
-    'true': 2
-
-  speedster_in_pool:
-    # Adds Speedster Chip from Mega Man X5 into the item pool.
-    # 
-    # Increases walking speed by 50%
-    'false': 1
-    'true': 2
-
-  super_recover_in_pool:
-    # Adds Super Recover Chip from Mega Man X5 into the item pool.
-    # 
-    # Increases recovery from items by 25%. Also affects EnergyLink deposit rate. Doesn't affect Sub Tanks.
-    'false': 1
-    'true': 2
-
-  x_hunters_medal_count:
-    # How many Maverick Medals are required to allow X-Hunters to spawn on the main map.
+    # You have to press SELECT on the map to swap which X-Hunter will be available.
     #
     # You can define additional values between the minimum and maximum values.
     # Minimum value is 0
@@ -184,355 +168,37 @@ Mega Man X2:
     strong: 2
     chaotic: 1
 
-  base_requirement:
-    medals: 8
-    weapons: 8
-    armor-upgrades: 4
-    heart-tanks: 2
-    sub-tanks: 2
-    access-item: 1
+  x_hunter_base_open:
+    # Under which condition will X-Hunter's Base open.
+    item: 1
+    medals: 4
 
-  # X-Hunter's Base Options
-  base_open:
-    # Under which conditions will X-Hunter's Base open.
-    # If no options are selected a multiworld item granting access to the lab will be created.
-    # 
-    # Medals: Consider Maverick medals to get access to the lab.
-    # Weapons: Consider weapons to get access to the lab.
-    # Armor Upgrades: Consider upgrades to get access to the lab.
-    # Heart Tanks: Consider heart tanks to get access to the lab.
-    # Sub Tanks: Consider sub tanks to get access to the lab.
-    []
-
-  base_medal_count:
+  x_hunter_base_medal_count:
     # How many Maverick Medals are required to access X-Hunter's Stage.
     #
     # You can define additional values between the minimum and maximum values.
     # Minimum value is 0
     # Maximum value is 8
-    random-range-0-4: 1
-    random-range-5-8: 2
+    random-range-middle-2-8: 1
 
-  base_weapon_count:
-    # How many weapons are required to access X-Hunter's Stage.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 6
-    random-range-0-3: 1
-    random-range-4-6: 2
-
-  base_upgrade_count:
-    # How many armor upgrades are required to access X-Hunter's Stage.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 4
-    random-range-0-2: 1
-    random-range-3-4: 2
-
-  base_heart_tank_count:
-    # How many Heart Tanks are required to access X-Hunter's Stage.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 6
-    random-range-0-3: 1
-    random-range-4-6: 2
-
-  base_sub_tank_count:
-    # How many Sub Tanks are required to access X-Hunter's Stage.
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 2
-    random: 1
-
-  base_boss_rematch_count:
+  x_hunter_base_boss_rematch_count:
     # How many boss rematches are needed in the fourth X-Hunter's Base stage.
     #
     # You can define additional values between the minimum and maximum values.
     # Minimum value is 0
     # Maximum value is 8
-    random-range-0-4: 1
-    random-range-5-8: 2
+    8: 50
+    random: 0
+    random-low: 0 # random value weighted towards lower values
+    random-high: 0 # random value weighted towards higher values
+    random-range-0-8: 0 # random value between 0 and 8
 
-  base_all_levels:
-    # Whether to unlock X-Hunter's Base 1-4 levels as a group or not.
-    # 
-    # Unlocking level 5 requires getting all X-Hunter's Base levels cleared.
-    'false': 2
-    'true': 1
-
-  # Aesthetic
-  player_palettes:
-    # Allows you to create colors for each weapon X has. Includes charge levels and Gold Armor customization.
-    # This will override the option preset
-    # 
-    # Each one expects 16 values which are mapped to X's colors.
-    # The values can be in SNES RGB (bgr555) with the $ prefix or PC RGB (rgb888) with the # prefix.
-    {}
-
-  palette_default:
-    # Which color to use for X's default color
-    blue: 1
-    gold_armor: 1
-    acid_burst: 0
-    parasitic_bomb: 0
-    triad_thunder: 0
-    spinning_blade: 0
-    ray_splasher: 0
-    gravity_well: 0
-    frost_shield: 0
-    tornado_fang: 0
-    crystal_hunter: 0
-    bubble_splash: 0
-    silk_shot: 0
-    spin_wheel: 0
-    sonic_slicer: 0
-    strike_chain: 0
-    magnet_mine: 0
-    speed_burner: 0
-    homing_torpedo: 0
-    chameleon_sting: 0
-    rolling_shield: 0
-    fire_wave: 0
-    storm_tornado: 0
-    electric_spark: 0
-    boomerang_cutter: 0
-    shotgun_ice: 0
-
-  palette_crystal_hunter:
-    # Which color to use for X's Crystal Hunter
-    blue: 0
-    gold_armor: 0
-    acid_burst: 0
-    parasitic_bomb: 0
-    triad_thunder: 0
-    spinning_blade: 0
-    ray_splasher: 0
-    gravity_well: 0
-    frost_shield: 0
-    tornado_fang: 0
-    crystal_hunter: 50
-    bubble_splash: 0
-    silk_shot: 0
-    spin_wheel: 0
-    sonic_slicer: 0
-    strike_chain: 0
-    magnet_mine: 0
-    speed_burner: 0
-    homing_torpedo: 0
-    chameleon_sting: 0
-    rolling_shield: 0
-    fire_wave: 0
-    storm_tornado: 0
-    electric_spark: 0
-    boomerang_cutter: 0
-    shotgun_ice: 0
-
-  palette_bubble_splash:
-    # Which color to use for X's Bubble Splash
-    blue: 0
-    gold_armor: 0
-    acid_burst: 0
-    parasitic_bomb: 0
-    triad_thunder: 0
-    spinning_blade: 0
-    ray_splasher: 0
-    gravity_well: 0
-    frost_shield: 0
-    tornado_fang: 0
-    crystal_hunter: 0
-    bubble_splash: 50
-    silk_shot: 0
-    spin_wheel: 0
-    sonic_slicer: 0
-    strike_chain: 0
-    magnet_mine: 0
-    speed_burner: 0
-    homing_torpedo: 0
-    chameleon_sting: 0
-    rolling_shield: 0
-    fire_wave: 0
-    storm_tornado: 0
-    electric_spark: 0
-    boomerang_cutter: 0
-    shotgun_ice: 0
-
-  palette_silk_shot:
-    # Which color to use for X's Silk Shot
-    blue: 0
-    gold_armor: 0
-    acid_burst: 0
-    parasitic_bomb: 0
-    triad_thunder: 0
-    spinning_blade: 0
-    ray_splasher: 0
-    gravity_well: 0
-    frost_shield: 0
-    tornado_fang: 0
-    crystal_hunter: 0
-    bubble_splash: 0
-    silk_shot: 50
-    spin_wheel: 0
-    sonic_slicer: 0
-    strike_chain: 0
-    magnet_mine: 0
-    speed_burner: 0
-    homing_torpedo: 0
-    chameleon_sting: 0
-    rolling_shield: 0
-    fire_wave: 0
-    storm_tornado: 0
-    electric_spark: 0
-    boomerang_cutter: 0
-    shotgun_ice: 0
-
-  palette_spin_wheel:
-    # Which color to use for X's Spin Wheel
-    blue: 0
-    gold_armor: 0
-    acid_burst: 0
-    parasitic_bomb: 0
-    triad_thunder: 0
-    spinning_blade: 0
-    ray_splasher: 0
-    gravity_well: 0
-    frost_shield: 0
-    tornado_fang: 0
-    crystal_hunter: 0
-    bubble_splash: 0
-    silk_shot: 0
-    spin_wheel: 50
-    sonic_slicer: 0
-    strike_chain: 0
-    magnet_mine: 0
-    speed_burner: 0
-    homing_torpedo: 0
-    chameleon_sting: 0
-    rolling_shield: 0
-    fire_wave: 0
-    storm_tornado: 0
-    electric_spark: 0
-    boomerang_cutter: 0
-    shotgun_ice: 0
-
-  palette_sonic_slicer:
-    # Which color to use for X's Sonic Slicer
-    blue: 0
-    gold_armor: 0
-    acid_burst: 0
-    parasitic_bomb: 0
-    triad_thunder: 0
-    spinning_blade: 0
-    ray_splasher: 0
-    gravity_well: 0
-    frost_shield: 0
-    tornado_fang: 0
-    crystal_hunter: 0
-    bubble_splash: 0
-    silk_shot: 0
-    spin_wheel: 0
-    sonic_slicer: 50
-    strike_chain: 0
-    magnet_mine: 0
-    speed_burner: 0
-    homing_torpedo: 0
-    chameleon_sting: 0
-    rolling_shield: 0
-    fire_wave: 0
-    storm_tornado: 0
-    electric_spark: 0
-    boomerang_cutter: 0
-    shotgun_ice: 0
-
-  palette_strike_chain:
-    # Which color to use for X's Strike Chain
-    blue: 0
-    gold_armor: 0
-    acid_burst: 0
-    parasitic_bomb: 0
-    triad_thunder: 0
-    spinning_blade: 0
-    ray_splasher: 0
-    gravity_well: 0
-    frost_shield: 0
-    tornado_fang: 0
-    crystal_hunter: 0
-    bubble_splash: 0
-    silk_shot: 0
-    spin_wheel: 0
-    sonic_slicer: 0
-    strike_chain: 50
-    magnet_mine: 0
-    speed_burner: 0
-    homing_torpedo: 0
-    chameleon_sting: 0
-    rolling_shield: 0
-    fire_wave: 0
-    storm_tornado: 0
-    electric_spark: 0
-    boomerang_cutter: 0
-    shotgun_ice: 0
-
-  palette_magnet_mine:
-    # Which color to use for X's Magnet Mine
-    blue: 0
-    gold_armor: 0
-    acid_burst: 0
-    parasitic_bomb: 0
-    triad_thunder: 0
-    spinning_blade: 0
-    ray_splasher: 0
-    gravity_well: 0
-    frost_shield: 0
-    tornado_fang: 0
-    crystal_hunter: 0
-    bubble_splash: 0
-    silk_shot: 0
-    spin_wheel: 0
-    sonic_slicer: 0
-    strike_chain: 0
-    magnet_mine: 50
-    speed_burner: 0
-    homing_torpedo: 0
-    chameleon_sting: 0
-    rolling_shield: 0
-    fire_wave: 0
-    storm_tornado: 0
-    electric_spark: 0
-    boomerang_cutter: 0
-    shotgun_ice: 0
-
-  palette_speed_burner:
-    # Which color to use for X's Speed Burner
-    blue: 0
-    gold_armor: 0
-    acid_burst: 0
-    parasitic_bomb: 0
-    triad_thunder: 0
-    spinning_blade: 0
-    ray_splasher: 0
-    gravity_well: 0
-    frost_shield: 0
-    tornado_fang: 0
-    crystal_hunter: 0
-    bubble_splash: 0
-    silk_shot: 0
-    spin_wheel: 0
-    sonic_slicer: 0
-    strike_chain: 0
-    magnet_mine: 0
-    speed_burner: 50
-    homing_torpedo: 0
-    chameleon_sting: 0
-    rolling_shield: 0
-    fire_wave: 0
-    storm_tornado: 0
-    electric_spark: 0
-    boomerang_cutter: 0
-    shotgun_ice: 0
+  x_hunter_base_level_unlock:
+    # How are X-Hunter Base levels unlocked once you have access to the X-Hunter Base.
+    #   - **Vanilla**: Each level is unlocked as soon the previous one is beaten.
+    #   - **All Open**: All levels are unlocked.
+    vanilla: 4
+    all_open: 1
 
   # Item & Location Options
   local_items:
@@ -574,38 +240,6 @@ Mega Man X2:
     []
 
   triggers:
-  # Determine single goal for base unlock
-  - option_category: Mega Man X2
-    option_name: base_requirement
-    option_result: medals
-    options:
-      Mega Man X2:
-        base_open: ["Medals"]
-  - option_category: Mega Man X2
-    option_name: base_requirement
-    option_result: weapons
-    options:
-      Mega Man X2:
-        base_open: ["Weapons"]
-  - option_category: Mega Man X2
-    option_name: base_requirement
-    option_result: armor-upgrades
-    options:
-      Mega Man X2:
-        base_open: ["Armor Upgrades"]
-  - option_category: Mega Man X2
-    option_name: base_requirement
-    option_result: heart-tanks
-    options:
-      Mega Man X2:
-        base_open: ["Heart Tanks"]
-  - option_category: Mega Man X2
-    option_name: base_requirement
-    option_result: sub-tanks
-    options:
-      Mega Man X2:
-        base_open: ["Sub Tanks"]
-
   # Adjust HP / heart tanks relative to bosses
   - option_category: Mega Man X2
     option_name: boss_randomize_hp
