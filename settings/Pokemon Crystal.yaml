@@ -526,6 +526,18 @@ Pokemon Crystal:
     minimal: 0 # equivalent to 0
     fully_compatible: 0 # equivalent to 100
 
+  hm_compatibility_override:
+    # Allows overriding compatibility percentage for specific HMs
+    # 
+    # Uses the following format:
+    # hm_compatibility_override:
+    #   Headbutt: 10
+    #   Fly: 100
+    #   Flash: 0
+    # 
+    # Headbutt and Rock Smash are considered HMs for this setting.
+    {}
+
   hm_badge_requirements:
     # Vanilla: HMs require their vanilla badges
     # No Badges: HMs do not require a badge to use
@@ -543,6 +555,12 @@ Pokemon Crystal:
     # 
     # HMs should be provided in the form: "Fly".
     []
+
+  field_moves_always_usable:
+    # Decouples TM/HM Compatibility for Battle Moves and Field Moves.
+    # If enabled, Field Moves will always be considered usable, regardless of TM or HM compatibility. Badge requirements still apply.
+    'false': 50
+    'true': 0
 
   free_fly_location:
     # Free Fly: Unlocks a random Fly destination when Fly is obtained.
@@ -899,6 +917,26 @@ Pokemon Crystal:
     # Does not apply to vanilla TMs
     []
 
+  modernise_moves_generation:
+    # Selects the generation to update moves to.
+    # This affects power, PP and accuracy only and is applied before any randomization.
+    #
+    # You can define additional values between the minimum and maximum values.
+    # Minimum value is 3
+    # Maximum value is 9
+    random: 0
+    random-low: 0 # random value weighted towards lower values
+    random-high: 0 # random value weighted towards higher values
+    random-range-3-9: 0 # random value between 3 and 9
+    disabled: 50 # equivalent to 0
+
+  modernise_moves_type:
+    # Selects whether generational buffs, nerfs or both are applied to moves.
+    # Only has an effect if a generation is selected to modernise moves to.
+    buffs_and_nerfs: 50
+    buffs_only: 0
+    nerfs_only: 0
+
   ############
   # Trainers #
   ############
@@ -1085,6 +1123,11 @@ Pokemon Crystal:
     'false': 0
     'true': 50
 
+  trades_required:
+    # Specifies if in-game trades may be logically required
+    'false': 50
+    'true': 0
+
   evolution_methods_required:
     # Sets which types of evolutions may be logically required
     ['Level', 'Level Tyrogue', 'Use Item', 'Happiness']
@@ -1109,6 +1152,11 @@ Pokemon Crystal:
     none: 0
     with_ditto: 50
     any: 0
+
+  enforce_breeding_methods_logic:
+    # Sets whether the game will prevent the breeding of Pokemon that do not match the selected breeding logic
+    'false': 50
+    'true': 0
 
   #########
   # Traps #
@@ -1186,6 +1234,7 @@ Pokemon Crystal:
     #     no_exp: EXP is disabled
     # fast_egg_hatch: off/on - Sets whether eggs take a single cycle to hatch
     # fast_egg_make: off/on - Sets whether eggs are guaranteed after one cycle at the day care
+    # fast_surf: off/on - Sets whether Surfing is bike speed
     # guaranteed_catch: off/on - Sets whether balls have a 100% success rate
     # hms_require_teaching: on/off - Sets whether it is required to teach field moves to use them in the field
     # item_notification: popup/sound/none - Sets how Trainersanity, Dex(count)sanity and Grasssanity locations show item notifications
@@ -1215,8 +1264,9 @@ Pokemon Crystal:
     catch_exp: 'off'
     dex_area_beep: 'on'
     exp_distribution: gen2
-    fast_egg_hatch: 'off'
-    fast_egg_make: 'off'
+    fast_egg_hatch: 'on'
+    fast_egg_make: 'on'
+    fast_surf: 'on'
     guaranteed_catch: 'off'
     hms_require_teaching: 'on'
     item_notification: popup
@@ -1246,6 +1296,50 @@ Pokemon Crystal:
     'off': 1
     spheres: 2
     spheres_and_distance: 4
+
+  level_curve:
+    # When level scaling is enabled, use a custom level curve instead of deriving levels from vanilla data.
+    # The curve distributes levels from min to max across all scaled levels (trainers, statics, and wild encounters).
+    # 
+    # - Vanilla: Use vanilla levels as the basis for scaling.
+    # - Linear: Levels increase at a constant rate from min to max.
+    # - Sqrt: Levels rise quickly early then taper off. Harder early game, compressed late game.
+    # - Quadratic: Levels stay low early then rise steeply. Easier early game, rapid late-game growth.
+    # - S Curve: Slow start, fast middle, slow finish.
+    vanilla: 50
+    linear: 0
+    sqrt: 0
+    quadratic: 0
+    s_curve: 0
+
+  level_curve_min_level:
+    # The starting level for the custom level curve. Only used when Level Curve is not vanilla.
+    #
+    # You can define additional values between the minimum and maximum values.
+    # Minimum value is 1
+    # Maximum value is 100
+    2: 50
+    random: 0
+    random-low: 0 # random value weighted towards lower values
+    random-high: 0 # random value weighted towards higher values
+    random-range-1-100: 0 # random value between 1 and 100
+
+  level_curve_max_level:
+    # The ending level for the custom level curve. Only used when Level Curve is not vanilla.
+    # 
+    # Red will be scaled so his lowest level matches this value. Wilds and statics will be scaled up to 2/3 of this value.
+    # 
+    # NOTE: Trainers are scaled based on their lowest level party member, so they can have levels above this value.
+    #
+    # You can define additional values between the minimum and maximum values.
+    # Minimum value is 1
+    # Maximum value is 100
+    73: 50
+    random: 0
+    random-low: 0 # random value weighted towards lower values
+    random-high: 0 # random value weighted towards higher values
+    random-range-1-100: 0 # random value between 1 and 100
+
 
   lock_kanto_gyms:
     # Logically lock entering all Kanto gyms and Mt. Moon behind access to a high level Pokemon, included locations:
@@ -1388,6 +1482,14 @@ Pokemon Crystal:
     'off': 50
     shuffle: 0
     completely_random: 0
+
+  trainer_palette:
+    # Sets the palette used for the player character
+    vanilla: 1
+    red: 1
+    blue: 1
+    green: 1
+    brown: 1
 
   ######
   # :3 #
