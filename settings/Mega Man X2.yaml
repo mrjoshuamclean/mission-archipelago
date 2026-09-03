@@ -135,17 +135,21 @@ Mega Man X2:
     # Every main boss will have its weakness randomized.
     # 
     # vanilla: Bosses retain their original weaknesses
-    # shuffled: Bosses have their weaknesses shuffled
-    # chaotic_double: Bosses will have two random weaknesses under the chaotic set
+    # swapped: Bosses will swap around their weaknesses with other bosses
+    # simple: Bosses will have one random weakness
     # chaotic_single: Bosses will have one random weakness under the chaotic set
+    # chaotic_double: Bosses will have two random weaknesses under the chaotic set
+    # chaotic_triple: Bosses will have three random weakness under the chaotic set
     # 
     # The chaotic set makes every weapon charge level a separate weakness instead of keeping
-    # them together, meaning that a boss can be weak to Charged Silk Shot but not its
+    # them together, meaning that a boss can be weak to Charged Spin Wheel but not its
     # uncharged version.
     vanilla: 16
-    shuffled: 8
-    chaotic_double: 2
+    swapped: 64
+    simple: 32
     chaotic_single: 1
+    chaotic_double: 2
+    chaotic_triple: 8
 
   boss_weakness_plando:
     # Forces bosses to have a specific weakness. Uses the names that appear on the chaotic weakness set.
@@ -179,14 +183,6 @@ Mega Man X2:
     regular: 4
     strong: 2
     chaotic: 1
-
-  logic_boss_weakness:
-    # Most bosses will logically expect you to have its weakness.
-    # 
-    # This option will be forced if the Boss Weakness Strictness setting is set to require only the weakness or
-    # the upgraded buster option.
-    'false': 0
-    'true': 50
 
   base_requirement:
     medals: 8
