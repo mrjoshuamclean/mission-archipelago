@@ -629,6 +629,12 @@ Pokemon Crystal:
     keep_bst: 0
     completely_random: 0
 
+  base_stats_multiples_of_five:
+    # When randomizing base stats, aim to make the new base stats multiples of 5.
+    # When using Keep BST, any remainder will be added to one stat.
+    'false': 50
+    'true': 0
+
   randomize_types:
     # Vanilla: Vanilla Pokemon types
     # Follow Evolutions: Types are randomized but preserved when evolved
@@ -1107,77 +1113,50 @@ Pokemon Crystal:
   #########
   # Traps #
   #########
-  phone_trap_weight:
-    # Adds random Pokegear calls that acts as traps
-    # Weight is the percentage chance each filler item is replaced with a trap
+  filler_trap_percentage:
+    # Percentage chance each filler item is replaced with a trap
+    # 
+    # If no traps have any weight, this option does nothing
+    # 
+    # NOTE: This option has a maximum of 20 by default, this can be changed by setting maximum_filler_trap_percentage in host.yaml
     #
     # You can define additional values between the minimum and maximum values.
     # Minimum value is 0
-    # Maximum value is 8
-    0: 50
-    random: 0
-    random-low: 0
-    random-high: 0
+    # Maximum value is 100
+    random-range-low-0-20: 1
 
-  sleep_trap_weight:
-    # Trap that causes Sleep status on your party
-    # Weight is the percentage chance each filler item is replaced with a trap
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 8
-    0: 50
-    random: 0
-    random-low: 0
-    random-high: 0
+  trap_weights:
+    # Specifies the weights at which traps become each trap type
+    # 
+    # - Burn, Paralysis, Sleep, Poison and Freeze traps afflict the corresponding status on your party
+    # - Phone Traps trigger random Pokegear calls (NOTE: Phone Traps loop after you receive 32 of them)
+    # - Tutorial Traps trigger the catch tutorial
+    # - Teleport Traps use the move Teleport (both in battle and out of battle)
+    # - Whirlpool Traps spin you around in the overworld or trap you in Whirlpool for 99 turns in battle
+    # - Ice Traps make the overworld slippery for 40-60 steps
+    # - Explosion Traps faint a party member in the overworld or use Explosion in battle
+    # - Sandstorm Traps slow you in the overworld for 20-40 steps or activate Sandstorm for 99 turns in battle
+    # - Metronome Traps trigger a random other move trap in the overworld or use Metronome in battle
+    Burn Trap: 16
+    Paralysis Trap: 16
+    Freeze Trap: 16
+    Poison Trap: 16
+    Sleep Trap: 16
+    Ice Trap: 8
+    Sandstorm Trap: 4
+    Teleport Trap: 4
+    Phone Trap: 2
+    Tutorial Trap: 2
+    Whirlpool Trap: 1
+    Explosion Trap: 1
+    Metronome Trap: 1
 
-  poison_trap_weight:
-    # Trap that causes Poison status on your party
-    # Weight is the percentage chance each filler item is replaced with a trap
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 8
-    0: 50
-    random: 0
-    random-low: 0
-    random-high: 0
-
-  burn_trap_weight:
-    # Trap that causes Burn status on your party
-    # Weight is the percentage chance each filler item is replaced with a trap
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 8
-    0: 50
-    random: 0
-    random-low: 0
-    random-high: 0
-
-  freeze_trap_weight:
-    # Trap that causes Freeze status on your party
-    # Weight is the percentage chance each filler item is replaced with a trap
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 8
-    0: 50
-    random: 0
-    random-low: 0
-    random-high: 0
-
-  paralysis_trap_weight:
-    # Trap that causes Paralysis status on your party
-    # Weight is the percentage chance each filler item is replaced with a trap
-    #
-    # You can define additional values between the minimum and maximum values.
-    # Minimum value is 0
-    # Maximum value is 8
-    0: 50
-    random: 0
-    random-low: 0
-    random-high: 0
+  trap_link:
+    # Games that support traplink will all receive similar traps when a matching trap is sent from another traplink game
+    # 
+    # This only applies to traps you have enabled
+    'false': 50
+    'true': 0
 
   ###################
   # Quality of Life #
